@@ -1,0 +1,349 @@
+{
+    "log_level": "INFO",
+    "player_name": "Player 1",
+    "player_spaceship": "src/images/Characters/Ship3.png",
+    "default_background": "src/images/background.png",
+    "default_spaceship": "src/images/default_spaceship.png",
+    "player_acceleration": 2.0,
+    "enemies_acceleration": -0.5,
+    "game_acceleration": -0.2,
+    "stages": [
+        {
+            "name": "Stage 1",
+            "stage_length": 70,
+            "enemies": [
+                {
+                    "path": "src/images/Enemies/Ship1.png",
+                    "path_flipped": "src/images/Enemies/Ship1_h.png",
+                    "quantity": 100,
+                    "type": "Enemy 1"
+                },
+                {
+                    "path": "src/images/Enemies/Ship2.png",
+                    "path_flipped": "src/images/Enemies/Ship2_h.png",
+                    "quantity": 100,
+                    "type": "Enemy 2"
+                }
+            ],
+            "background": [
+                {
+                    "path": "src/images/Stages/Stage1/background.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Common",
+                    "speed": 0
+                },
+                {
+                    "path": "src/images/Stages/Stage1/star.png",
+                    "position": {"x": 500, "y": 0},
+                    "type": "Common",
+                    "speed": 1.2
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stars.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.8
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stars.png",
+                    "position": {"x": 150, "y": 150},
+                    "type": "Continuous",
+                    "speed": 0.5
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stones1.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 2.5
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stones2.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 3.5
+                }
+            ]
+        },
+        {
+            "name": "Stage 1 - Complete",
+            "stage_length": 1,
+            "enemies": [
+                {
+                    "path": "src/images/Enemies/Ship1.png",
+                    "path_flipped": "src/images/Enemies/Ship1_h.png",
+                    "quantity": 0,
+                    "type": "Enemy 1"
+                }
+            ],
+            "background": [
+                {
+                    "path": "src/images/Stages/Stage1/background.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Common",
+                    "speed": 0
+                },
+                {
+                    "path": "src/images/Stages/Stage1/star.png",
+                    "position": {"x": 500, "y": 0},
+                    "type": "Continuous",
+                    "speed": 1.2
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stars.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.8
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stars.png",
+                    "position": {"x": 150, "y": 150},
+                    "type": "Continuous",
+                    "speed": 0.5
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stones1.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 2.5
+                },
+                {
+                    "path": "src/images/Stages/Stage1/stones2.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 3.5
+                },
+                {
+                    "path": "src/images/level_cleared.png",
+                    "position": {"x": 75, "y": 0},
+                    "type": "Common",
+                    "speed": 0.75
+                }
+            ]
+        },
+        {
+            "name": "Stage 2",
+            "stage_length": 70,
+            "enemies": [
+                {
+                    "path": "src/images/Enemies/Ship3.png",
+                    "path_flipped": "src/images/Enemies/Ship3_h.png",
+                    "quantity": 100,
+                    "type": "Enemy 1"
+                },
+                {
+                    "path": "src/images/Enemies/Ship4.png",
+                    "path_flipped": "src/images/Enemies/Ship4_h.png",
+                    "quantity": 100,
+                    "type": "Enemy 2"
+                }
+            ],
+            "background": [
+                {
+                    "path": "src/images/Stages/Stage2/background.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Common",
+                    "speed": 0
+                },
+                {
+                    "path": "src/images/Stages/Stage2/stars.png",
+                    "position": {"x": -100, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.2
+                },
+                {
+                    "path": "src/images/Stages/Stage2/stars.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.2
+                },
+                {
+                    "path": "src/images/Stages/Stage2/planets1.png",
+                    "position": {"x": 500, "y": 0},
+                    "type": "Continuous",
+                    "speed": 1.2
+                },
+                {
+                    "path": "src/images/Stages/Stage2/planets2.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.8
+                }
+            ]
+        },
+        {
+            "name": "Stage 2 - Cleared",
+            "stage_length": 1,
+            "enemies": [
+                {
+                    "path": "src/images/Enemies/Ship3.png",
+                    "path_flipped": "src/images/Enemies/Ship3_h.png",
+                    "quantity": 0,
+                    "type": "Enemy 1"
+                }
+            ],
+            "background": [
+                {
+                    "path": "src/images/Stages/Stage2/background.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Common",
+                    "speed": 0
+                },
+                {
+                    "path": "src/images/Stages/Stage2/stars.png",
+                    "position": {"x": -100, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.2
+                },
+                {
+                    "path": "src/images/Stages/Stage2/stars.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.2
+                },
+                {
+                    "path": "src/images/Stages/Stage2/planets1.png",
+                    "position": {"x": 500, "y": 0},
+                    "type": "Continuous",
+                    "speed": 1.2
+                },
+                {
+                    "path": "src/images/Stages/Stage2/planets2.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.8
+                },
+                {
+                    "path": "src/images/level_cleared.png",
+                    "position": {"x": 75, "y": 0},
+                    "type": "Common",
+                    "speed": 0.75
+                }
+            ]
+        },
+        {
+            "name": "Stage 3",
+            "stage_length": 70,
+            "enemies": [
+                {
+                    "path": "src/images/Enemies/Ship5.png",
+                    "path_flipped": "src/images/Enemies/Ship5_h.png",
+                    "quantity": 100,
+                    "type": "Enemy 1"
+                },
+                {
+                    "path": "src/images/Enemies/Ship6.png",
+                    "path_flipped": "src/images/Enemies/Ship6_h.png",
+                    "quantity": 100,
+                    "type": "Enemy 2"
+                }
+            ],
+            "background": [
+                {
+                    "path": "src/images/Stages/Stage3/background.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Common",
+                    "speed": 0
+                },
+                {
+                    "path": "src/images/Stages/Stage3/stars.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.2
+                },
+                {
+                    "path": "src/images/Stages/Stage3/shooting_stars.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.4
+                },
+                {
+                    "path": "src/images/Stages/Stage3/moon.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Common",
+                    "speed": 0.5
+                },
+                {
+                    "path": "src/images/Stages/Stage3/ground.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.6
+                },                
+                {
+                    "path": "src/images/Stages/Stage3/volcanos.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 1.5
+                },
+                {
+                    "path": "src/images/Stages/Stage3/stones.png",
+                    "position": {"x": 500, "y": 0},
+                    "type": "Continuous",
+                    "speed": 5
+                }
+            ]
+        },
+        {
+            "name": "Stage 3 - Cleared",
+            "stage_length": 1,
+            "enemies": [
+                {
+                    "path": "src/images/Enemies/Ship5.png",
+                    "path_flipped": "src/images/Enemies/Ship5_h.png",
+                    "quantity": 0,
+                    "type": "Enemy 1"
+                }
+            ],
+            "background": [
+                {
+                    "path": "src/images/Stages/Stage3/background.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Common",
+                    "speed": 0
+                },
+                {
+                    "path": "src/images/Stages/Stage3/stars.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.2
+                },
+                {
+                    "path": "src/images/Stages/Stage3/shooting_stars.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.4
+                },
+                {
+                    "path": "src/images/Stages/Stage3/moon.png",
+                    "position": {"x": 200, "y": 0},
+                    "type": "Common",
+                    "speed": 0.5
+                },
+                {
+                    "path": "src/images/Stages/Stage3/ground.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 0.6
+                },
+                
+                {
+                    "path": "src/images/Stages/Stage3/volcanos.png",
+                    "position": {"x": 0, "y": 0},
+                    "type": "Continuous",
+                    "speed": 1.5
+                },
+                {
+                    "path": "src/images/Stages/Stage3/stones.png",
+                    "position": {"x": 500, "y": 0},
+                    "type": "Continuous",
+                    "speed": 5
+                },
+                {
+                    "path": "src/images/level_cleared.png",
+                    "position": {"x": 75, "y": 0},
+                    "type": "Common",
+                    "speed": 0.75
+                }
+            ]
+        }
+    ]
+}
