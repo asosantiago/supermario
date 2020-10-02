@@ -9,7 +9,7 @@ brew install sdl2 sdl2_image sdl2_ttf
 
 On mac
 ```
-./compile mac
+./compile.sh
 ```
 
 # Command line
