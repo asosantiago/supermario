@@ -13,6 +13,7 @@ using namespace std;
 class Character : public SpaceShip {
 private:
     SDL_Surface* element_surface = 0;
+    float y_vel = 0;
     void update_position();
     void render();
 public:

@@ -67,7 +67,7 @@ void Game::createCharacter() {
         Logger::getInstance().logError("Game: File: " + player_spaceship + " does not exists, loading default");
         player_spaceship = SimpleConfig::getInstance().getDefaultSpaceship();
     }
-    character = Character(Position(100,300), player_name, player_spaceship);
+    character = Character(Position(100,SimpleConfig::getInstance().getInitialPositionY()), player_name, player_spaceship);
 }
 void Game::updateCharacters() {
     character.update();

@@ -28,8 +28,12 @@ class SimpleConfig{
         string getPlayerSpaceship();
         string getDefaultSpaceship();
         float getPlayerAcceleration();
+        float getVelInitY();
         float getEnemiesAcceleration();
         float getGameAcceleration();
+        float getGravity();
+        int getFloorY();
+        int getInitialPositionY();
         queue<StageData> getStages();
         void readJsonFile(string JsonConfigFileName);
         void validate();

@@ -44,12 +44,28 @@ float SimpleConfig::getPlayerAcceleration() {
     return this->configuration["player_acceleration"];
 }
 
+float SimpleConfig::getVelInitY() {
+    return this->configuration["player_vel_init_y"];
+}
+
 float SimpleConfig::getEnemiesAcceleration() {
     return this->configuration["enemies_acceleration"];
 }
 
 float SimpleConfig::getGameAcceleration() {
     return this->configuration["game_acceleration"];
+}
+
+float SimpleConfig::getGravity() {
+    return this->configuration["gravity"];
+}
+
+int SimpleConfig::getFloorY() {
+    return this->configuration["floor_y"];
+}
+
+int SimpleConfig::getInitialPositionY() {
+    return this->configuration["initial_position_y"];
 }
 
 queue<StageData> SimpleConfig::getStages() {
