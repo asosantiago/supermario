@@ -12,6 +12,7 @@ class SpaceShip : public GameObject{
         std::string name;
         std::string image_path;
         SpaceShip(Position position, std::string name, std::string image_path);
+        Position getPosition();
         SpaceShip() {};
         virtual ~SpaceShip() {};
     private:

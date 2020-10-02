@@ -51,3 +51,15 @@ void Character::update_position() {
 void Character::do_update_position() {
     this->position.move_to_position(this->futurePosition);
 }
+
+int Character::getRightLimit() {
+    return this->position.get_position()[0] + this->element_surface->w;
+}
+
+int Character::getLeftLimit() {
+    return this->position.get_position()[0];
+}
+
+int Character::getDownLimit() {
+    return this->position.get_position()[1] + this->element_surface->h;
+}

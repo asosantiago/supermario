@@ -9,9 +9,10 @@ SDL_Event event;
 
 Game::Game() {
     stages_data = SimpleConfig::getInstance().getStages();
-
+    this->restart = false;
     this->initGame();
     this->createCharacter();
+    this->current_stage_data = stages_data.front();
     this->nextStage();
 };
 
@@ -26,6 +27,7 @@ void Game::initGame(){
 
 void Game::gameLoop() {
     bool quit = false;
+    this->restart = false;
 
     while(!quit) {
         while(SDL_PollEvent(&event)) {
@@ -35,6 +37,13 @@ void Game::gameLoop() {
                 quit = true;
             }
         }
+
+        if (this->restart) {
+            this->createCharacter();
+            current_stage = StageFactory(current_stage_data).build();
+        }
+        this->restart = false;
+
         this->refresh();
         if (current_stage.is_finished()) {
             Logger::getInstance().logInfo("Game: Stage: " + current_stage.get_name() + " is finished");
@@ -44,6 +53,7 @@ void Game::gameLoop() {
                 this->nextStage();
         }
     }
+
     Renderer::getInstance().close();
 };
 
@@ -85,20 +95,83 @@ void Game::updateStage() {
 
 void Game::checkCollitions() {
     vector<shared_ptr<Enemy>> enemies = current_stage.getEnemies();
+    int char_lim_right = character.getRightLimit();
+    int char_lim_left = character.getLeftLimit();
+    int char_lim_down = character.getDownLimit();
 
     for (int i = 0; i < enemies.size(); i++) {
-        // bool collitioned = this->checkCollition(character, enemies[i]);
+        
+        int enemy_lim_right = enemies[i]->getRightLimit();
+        int enemy_lim_left = enemies[i]->getLeftLimit();
+        int enemy_lim_down = enemies[i]->getDownLimit();
+        int enemy_lim_up = enemies[i]->getUpLimit();
+
+        bool col = false;
+
+        if (char_lim_left > enemy_lim_left && char_lim_left < enemy_lim_right ) {
+            if (char_lim_down > enemy_lim_up) {
+                col = true;
+            }
+        }
+
+        if (char_lim_right > enemy_lim_left && char_lim_right < enemy_lim_right ) {
+            if (char_lim_down > enemy_lim_up) {
+                col = true;
+            }
+        }
+
+        if (char_lim_left < enemy_lim_left && char_lim_right > enemy_lim_right ) {
+            if (char_lim_down > enemy_lim_up) {
+                col = true;
+            }
+        }
+
+        if (col) {
+            const SDL_MessageBoxButtonData buttons[] = {
+                { /* .flags, .buttonid, .text */        0, 0, "si" },
+                { SDL_MESSAGEBOX_BUTTON_RETURNKEY_DEFAULT, 1, "yes" }
+            };
+            const SDL_MessageBoxColorScheme colorScheme = {
+                { /* .colors (.r, .g, .b) */
+                    /* [SDL_MESSAGEBOX_COLOR_BACKGROUND] */
+                    { 255,   0,   0 },
+                    /* [SDL_MESSAGEBOX_COLOR_TEXT] */
+                    {   0, 255,   0 },
+                    /* [SDL_MESSAGEBOX_COLOR_BUTTON_BORDER] */
+                    { 255, 255,   0 },
+                    /* [SDL_MESSAGEBOX_COLOR_BUTTON_BACKGROUND] */
+                    {   0,   0, 255 },
+                    /* [SDL_MESSAGEBOX_COLOR_BUTTON_SELECTED] */
+                    { 255,   0, 255 }
+                }
+            };
+            const SDL_MessageBoxData messageboxdata = {
+                SDL_MESSAGEBOX_INFORMATION, /* .flags */
+                NULL, /* .window */
+                "PERDISTE GATE", /* .title */
+                "Try again?", /* .message */
+                SDL_arraysize(buttons), /* .numbuttons */
+                buttons, /* .buttons */
+                &colorScheme /* .colorScheme */
+            };
+            int buttonid;
+            if (SDL_ShowMessageBox(&messageboxdata, &buttonid) < 0) {
+                SDL_Log("error displaying message box");
+            }
+            if (buttonid == -1) {
+                SDL_Log("no selection");
+            } else {
+                this->restart = true;
+                SDL_Log("selection was %s", buttons[buttonid].text);
+            }
+        }
     }
 };
 
-bool Game::checkCollition(Character character, Enemy enemy) {
-    return false;
-};
-
 void Game::nextStage() {
-    StageData data = stages_data.front();
-    Logger::getInstance().logInfo("Game: Loading stage: " + data.name);
-    current_stage = StageFactory(data).build();
+    current_stage_data = stages_data.front();
+    Logger::getInstance().logInfo("Game: Loading stage: " + current_stage_data.name);
+    current_stage = StageFactory(current_stage_data).build();
     stages_data.pop();
 }
 

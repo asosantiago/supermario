@@ -19,6 +19,8 @@ class Game {
         queue<StageData> stages_data;
         Character character;
         Stage current_stage;
+        StageData current_stage_data;
+        bool restart;
     public:
         Game();
         void initGame();
@@ -32,7 +34,6 @@ class Game {
         void updateComponents();
         void updateStage();
         void checkCollitions();
-        bool checkCollition(Character character, Enemy enemy);
         void nextStage();
         bool isNextStage();
         void refreshView();

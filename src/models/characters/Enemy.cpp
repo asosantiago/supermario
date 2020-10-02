@@ -32,3 +32,19 @@ void Enemy::update_position() {
     if (backwards) accel *= -1;
     position.move(accel, 0);
 }
+
+int Enemy::getRightLimit() {
+    return this->position.get_position()[0] + this->element_surface->w;
+}
+
+int Enemy::getLeftLimit() {
+    return this->position.get_position()[0];
+}
+
+int Enemy::getDownLimit() {
+    return this->position.get_position()[1] + this->element_surface->h;
+}
+
+int Enemy::getUpLimit() {
+    return this->position.get_position()[1];
+}

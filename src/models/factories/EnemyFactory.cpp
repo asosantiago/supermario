@@ -34,7 +34,7 @@ vector<shared_ptr<Enemy>> EnemyFactory::build() {
 
             int positionX = minWidth + ( std::rand() % ( maxWidth - minWidth + 1 ) );
             // int positionY = minHeight + ( std::rand() % ( maxHeight - minHeight + 1 ) );
-            int positionY = SimpleConfig::getInstance().getFloorY();
+            int positionY = SimpleConfig::getInstance().getFloorY() + 45;
             
             Position position = Position(positionX, positionY);
 

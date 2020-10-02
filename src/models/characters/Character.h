@@ -23,6 +23,9 @@ public:
     virtual void update();
     virtual void doUpdate();
     ~Character() {};
+    int getRightLimit();
+    int getLeftLimit();
+    int getDownLimit();
 };
 
 #endif // CHARACTER_H

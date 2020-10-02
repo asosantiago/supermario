@@ -5,3 +5,7 @@ SpaceShip::SpaceShip(Position position, std::string name, std::string image_path
     this->name = name;
     this->image_path = image_path;
 };
+
+Position SpaceShip::getPosition() {
+    return this->position;
+};

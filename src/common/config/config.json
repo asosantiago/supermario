@@ -14,12 +14,12 @@
     "stages": [
         {
             "name": "Stage 1",
-            "stage_length": 4,
+            "stage_length": 2,
             "enemies": [
                 {
                     "path": "src/images/Enemies/trocafone.png",
                     "path_flipped": "src/images/Enemies/trocafone.png",
-                    "quantity": 10,
+                    "quantity": 3,
                     "type": "Enemy 1"
                 },
                 {

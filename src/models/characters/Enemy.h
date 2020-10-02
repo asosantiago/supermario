@@ -18,6 +18,10 @@ class Enemy : public SpaceShip {
         Enemy() {};
         virtual void update();
         ~Enemy() {};
+        int getRightLimit();
+        int getLeftLimit();
+        int getDownLimit();
+        int getUpLimit();
 };
 
 #endif // ENEMY_H

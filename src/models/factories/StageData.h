@@ -11,6 +11,7 @@ using namespace std;
 
 class StageData {
     public:
+        StageData() {};
         StageData(string name, int stage_length, vector<EnemyData> enemies, vector<BackgroundData> backgrounds): name(name), stage_length(stage_length), enemies(enemies), backgrounds(backgrounds) {};
         string name;
         int stage_length;
