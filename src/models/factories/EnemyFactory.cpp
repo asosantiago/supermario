@@ -12,7 +12,7 @@ vector<shared_ptr<Enemy>> EnemyFactory::build() {
     int minHeight = 0;
     int maxHeight =  SCREEN_HEIGHT - 100;
 
-    int minWidth = - (stage_length / 2) * SCREEN_WIDTH;
+    int minWidth = (stage_length / 2);
     int maxWidth = stage_length * SCREEN_WIDTH;
 
     for (int i = 0 ; i < data.size() ; i++) {
@@ -33,8 +33,9 @@ vector<shared_ptr<Enemy>> EnemyFactory::build() {
         for (int j = 0 ; j < data[i].amount - 1 ; j++) {
 
             int positionX = minWidth + ( std::rand() % ( maxWidth - minWidth + 1 ) );
-            int positionY = minHeight + ( std::rand() % ( maxHeight - minHeight + 1 ) );
-
+            // int positionY = minHeight + ( std::rand() % ( maxHeight - minHeight + 1 ) );
+            int positionY = SimpleConfig::getInstance().getFloorY();
+            
             Position position = Position(positionX, positionY);
 
             enemies.push_back(make_shared<Enemy>(position, type, image, image_flipped));

@@ -51,6 +51,8 @@ void Game::refresh() {
     this->updateComponents();
     this->updateStage();
     this->updateCharacters();
+    this->checkCollitions();
+    this->doUpdateCharacters();
     this->refreshView();
 };
 
@@ -73,8 +75,24 @@ void Game::updateCharacters() {
     character.update();
 };
 
+void Game::doUpdateCharacters() {
+    character.doUpdate();
+};
+
 void Game::updateStage() {
     current_stage.update();
+};
+
+void Game::checkCollitions() {
+    vector<shared_ptr<Enemy>> enemies = current_stage.getEnemies();
+
+    for (int i = 0; i < enemies.size(); i++) {
+        // bool collitioned = this->checkCollition(character, enemies[i]);
+    }
+};
+
+bool Game::checkCollition(Character character, Enemy enemy) {
+    return false;
 };
 
 void Game::nextStage() {

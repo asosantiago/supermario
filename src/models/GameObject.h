@@ -13,6 +13,7 @@ public:
     virtual ~GameObject() {};
 protected:
     Position position;
+    Position futurePosition;
 };
 
 #endif // GAME_OBJECT_H

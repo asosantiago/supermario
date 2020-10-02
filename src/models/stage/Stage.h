@@ -32,6 +32,7 @@ public:
     string get_name();
     ~Stage() {};
     string getName();
+    vector<shared_ptr<Enemy>> getEnemies();
 };
 
 

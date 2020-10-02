@@ -15,11 +15,13 @@ private:
     SDL_Surface* element_surface = 0;
     float y_vel = 0;
     void update_position();
+    void do_update_position();
     void render();
 public:
     Character(Position position, std::string name, std::string image_path);
     Character() {};
     virtual void update();
+    virtual void doUpdate();
     ~Character() {};
 };
 

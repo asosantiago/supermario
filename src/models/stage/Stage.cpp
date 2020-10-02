@@ -33,3 +33,7 @@ bool Stage::is_finished() {
 string Stage::get_name() {
     return this->name;
 }
+
+vector<shared_ptr<Enemy>> Stage::getEnemies() {
+    return this->enemies;
+}

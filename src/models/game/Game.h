@@ -28,8 +28,11 @@ class Game {
         void refresh();
         void createCharacter();
         void updateCharacters();
+        void doUpdateCharacters();
         void updateComponents();
         void updateStage();
+        void checkCollitions();
+        bool checkCollition(Character character, Enemy enemy);
         void nextStage();
         bool isNextStage();
         void refreshView();
